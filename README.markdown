@@ -3,7 +3,7 @@ Owl - The simple configfiles manager
 
 Imagine a directory like this:
 
-    /home/YOU/
+    ~/.owl/
         __me__/
             .vimrc
             .gvimrc
@@ -15,9 +15,9 @@ Imagine a directory like this:
 Then you run **owl sync**, and many symlinks to the readl files
 are made for you, like this:
 
-    /home/YOU/
-        .vimrc  # linking to ~/.owl/.vimrc
-        .gvimrc  # linking to ~/.owl/.gvimrc
+    ~/
+        .vimrc  # linking to ~/.owl/__me__/.vimrc
+        .gvimrc  # linking to ~/.owl/__me__/.gvimrc
         .hgrc  # and so on
     /etc/httpd/httpd.conf
 
