@@ -4,23 +4,22 @@ Owl - The simple configfiles manager
 
 Imagine a directory like this:
 
-    ~/.owl/
-        __me__/
-            .vimrc
-
-            .gvimrc
-        .hgrc
-    /etc/
-        httpd/
-            httpd.conf
+    | /home/YOU/
+    |     __me__/
+    |         .vimrc
+    |         .gvimrc
+    |         .hgrc
+    | /etc/
+    |     httpd/
+    |         httpd.conf
 
 Then you run *owl sync*, and many symlinks are made for you, like this:
 
-    /home/YOU/
-        .vimrc  # linking to ~/.owl/.vimrc
-
-        .gvimrc  # linking to ~/.owl/.gvimrc
-    /etc/httpd/httpd.conf  # linking to ~/.owl/httpd.conf
+    | /home/YOU/
+    |     .vimrc  # linking to ~/.owl/.vimrc
+    |     .gvimrc  # linking to ~/.owl/.gvimrc
+    |     .hgrc  # linking to ~/.owl/.hgrc
+    | /etc/httpd/httpd.conf  # linking to ~/.owl/etc/httpd/httpd.conf
 
 Isn't it awesome?
 
