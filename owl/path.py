@@ -22,3 +22,7 @@ def destinations(path):
     for filename in filenames:
         yield (os.path.join(dirpath, filename),
                os.path.join(destination_path, filename))
+
+
+def symlink(src, dst):
+    os.symlink(src, dst)
