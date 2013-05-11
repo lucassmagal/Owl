@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from owl import traverser
 from mock import patch
-from should_dsl import should
+from nose import tools
 
 
 @patch('getpass.getuser')
@@ -18,4 +18,5 @@ def test_destinations(mock_user):
         ('/home/bar/.owl/home/__me__/.vim/.vimrc', '/home/bar/.vim/.vimrc'),
         ('/home/bar/.owl/home/__me__/.vim/.gvimrc', '/home/bar/.vim/.gvimrc')
     ]
-    list(traverser.destinations(walk_output)) |should| equal_to(expected)
+
+    tools.assert_equal(list(traverser.destinations(walk_output)), expected)

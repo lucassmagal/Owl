@@ -49,4 +49,11 @@ sintaxe simples para links simbólicos também
 
 OU MELHOR! O owl SÓ FAZ links simbólicos! Uma configuração especial
 o faz copiar o conteúdo, ao invés de meramente linkar.
+
+    home/
+        __me__/
+
+Outro detalhe: a forma atual de funcionamento impede um "vars.py", pois
+tudo funciona na base do symlinking... talvez uma extensão especial, ".template",
+ajude. Assim, o linking só é feito quando houver um vars.py local.
 -->

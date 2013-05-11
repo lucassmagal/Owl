@@ -1,17 +1,6 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+from setuptools import setup
 from setuptools.command.test import test as TestCommand
-
-
-install_requires = ['jinja2>=1.2']
-try:
-    import argparse
-except ImportError:
-    install_requires.append('argparse')
-
-
-with open('README.rst') as f:
-    long_description = f.read()
 
 
 def latest_version_number():
@@ -51,7 +40,7 @@ setup(
     author='Lucas S. Magalhães',
     author_email='me@lsmagalhaes.com',
     description='It helps you configure anything',
-    long_description=long_description,
+    long_description='long_description',
     license='Apache Software License',
     version=latest_version_number(),
     classifiers=[
@@ -62,8 +51,8 @@ setup(
         'Intended Audience :: System Administrators',
         'License :: OSI Approved :: Apache Software License',
     ],
-    packages=find_packages(),
-    install_requires=[],
+    packages=['owl'],
+    # install_requires=['jinja2>=1.2'],
     tests_require=['tox'],
     cmdclass = {'test': Tox}
 )
