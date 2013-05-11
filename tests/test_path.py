@@ -38,7 +38,7 @@ def test_path_symlink(mock_os_symlink):
 @patch('os.symlink')
 def test_symlinking_when_file_exists(mock_os_symlink):
     _input = ('/home/bar/.owl/home/__me__/.vim/.gvimrc', '/home/bar/.vim/.gvimrc')
-    mock_os_symlink.side_effect = owl.exceptions.FileExists('/home/bar/.vim/.gvimrc')
+    mock_os_symlink.side_effect = OSError(17, 'File exists')
 
     with tools.assert_raises(owl.exceptions.FileExists):
         owl.path.symlink(*_input)

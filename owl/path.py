@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import getpass
+import exceptions
 
 
 def destinations(path):
@@ -25,4 +26,7 @@ def destinations(path):
 
 
 def symlink(src, dst):
-    os.symlink(src, dst)
+    try:
+        os.symlink(src, dst)
+    except OSError as e:
+        raise exceptions.FileExists(dst)
