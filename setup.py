@@ -2,6 +2,11 @@
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
+install_requires = []
+try:
+    import argparse
+except ImportError:
+    install_requires.append('argparse')
 
 def latest_version_number():
     """It will open the changelog and return the most
@@ -50,9 +55,13 @@ setup(
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
         'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
     ],
     packages=['owl'],
-    # install_requires=['jinja2>=1.2'],
+    install_requires=install_requires,
     tests_require=['tox'],
-    cmdclass = {'test': Tox}
+    cmdclass={'test': Tox},
+    scripts=['bin/owl']
 )
