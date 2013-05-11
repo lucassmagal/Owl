@@ -2,6 +2,7 @@
 import os
 import getpass
 import exceptions
+import errno
 
 
 def destinations(path):
@@ -29,4 +30,7 @@ def symlink(src, dst):
     try:
         os.symlink(src, dst)
     except OSError as e:
-        raise exceptions.FileExists(dst)
+        if e.errno == errno.EEXIST:
+            raise exceptions.FileExists(dst)
+        else:
+            raise exceptions.NoSuchFileOrDirectory(dst)
