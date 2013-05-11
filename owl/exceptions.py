@@ -8,3 +8,7 @@ class BaseError(RuntimeError):
 
 class FileExists(BaseError):
     pass
+
+
+class NoSuchFileOrDirectory(BaseError):
+    pass
