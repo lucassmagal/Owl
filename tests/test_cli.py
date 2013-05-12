@@ -11,7 +11,9 @@ from contextlib import contextmanager
 def patch_stdout():
     old_stdout = sys.stdout
     sys.stdout = captured = StringIO()
+
     yield captured
+
     sys.stdout = old_stdout
 
 

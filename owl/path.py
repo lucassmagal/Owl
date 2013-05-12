@@ -7,7 +7,7 @@ import errno
 
 def destinations(path):
     """It returns a generator of 2-tuples containing
-    the path of the file inside ~/.owl and the path
+    the path of the file inside ~/Owl and the path
     of the destination.
 
     If there's no files, it'll raise an error.
@@ -17,7 +17,7 @@ def destinations(path):
     if not filenames:
         return
 
-    destination_path = dirpath.split('.owl')[1]
+    destination_path = dirpath.split('Owl')[1]
     if destination_path.startswith('/home/__me__/'):
         destination_path = destination_path.replace('__me__', getpass.getuser())
 
